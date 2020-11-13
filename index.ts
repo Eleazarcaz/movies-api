@@ -7,6 +7,7 @@ import {
   wrapErrors,
 } from './utils/middlewares/errorHandler';
 import { notFoundHandler } from './utils/middlewares/notFoundHandler';
+import config from './config/index';
 
 const app: express.Application = express();
 
@@ -23,4 +24,4 @@ app.use(logErrors);
 app.use(wrapErrors);
 app.use(errorHandler);
 
-app.listen(3000, () => console.log('Server on port 3000'));
+app.listen(config.port, () => console.log('Server on port ' + config.port));
