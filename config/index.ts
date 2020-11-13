@@ -1,5 +1,6 @@
-import dotenv from 'dotenv';
-dotenv.config();
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 
 const config = {
   dev: process.env.NODE_ENV !== 'production',
